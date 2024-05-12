@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/12 17:05:05 by okraus           ###   ########.fr       */
+/*   Updated: 2024/05/12 20:46:33 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ Dog::~Dog(void)
 	std::cout << "Destructor of the Dog class called.";
 	ft_uncolorize();
 	std::cout << std::endl;
+
+	delete this->_brain;
 }
 
 void	Dog::getIdeas(void) const

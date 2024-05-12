@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/12 17:04:54 by okraus           ###   ########.fr       */
+/*   Updated: 2024/05/12 20:46:38 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ Cat::~Cat(void)
 	std::cout << "Destructor of the Cat class called.";
 	ft_uncolorize();
 	std::cout << std::endl;
+	delete this->_brain;
 }
 
 void	Cat::getIdeas(void) const

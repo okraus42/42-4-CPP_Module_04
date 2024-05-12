@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
-/*   Updated: 2024/05/11 16:05:43 by okraus           ###   ########.fr       */
+/*   Updated: 2024/05/12 20:39:42 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class WrongAnimal
 
 		const std::string	getType(void) const;
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif
