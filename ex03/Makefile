@@ -6,13 +6,15 @@
 #    By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 10:52:31 by okraus            #+#    #+#              #
-#    Updated: 2024/06/22 16:27:35 by okraus           ###   ########.fr        #
+#    Updated: 2024/06/22 16:29:15 by okraus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	AbstractClass
-SRCS		=	main.cpp colours.cpp AAnimal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
-HEADERS		=	AAnimal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp colours.hpp
+NAME		=	InterfaceAndRecap
+SRCS		=	main.cpp colours.cpp Amateria.cpp Ice.cpp Cure.cpp ICharacter.cpp Character.cpp \
+				IMateriaSource.cpp MateriaSource.cpp
+HEADERS		=	colours.hpp Amateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp \
+				IMateriaSource.hpp MateriaSource.hpp
 OBJS		=	$(SRCS:.cpp=.o)
 CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g
 CPP			=	c++
