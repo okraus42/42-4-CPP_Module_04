@@ -6,15 +6,13 @@
 #    By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 10:52:31 by okraus            #+#    #+#              #
-#    Updated: 2024/06/22 16:29:15 by okraus           ###   ########.fr        #
+#    Updated: 2024/09/11 14:16:16 by okraus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	InterfaceAndRecap
-SRCS		=	main.cpp colours.cpp Amateria.cpp Ice.cpp Cure.cpp ICharacter.cpp Character.cpp \
-				IMateriaSource.cpp MateriaSource.cpp
-HEADERS		=	colours.hpp Amateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp \
-				IMateriaSource.hpp MateriaSource.hpp
+NAME		=	Interface&Recap
+SRCS		=	main.cpp colours.cpp AMateria.cpp Ice.cpp Cure.cpp ICharacter.cpp Character.cpp MateriaSource.cpp IMateriaSource.cpp
+HEADERS		=	colours.hpp AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp MateriaSource.hpp IMateriaSource.hpp
 OBJS		=	$(SRCS:.cpp=.o)
 CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98 -g
 CPP			=	c++
