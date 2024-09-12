@@ -6,25 +6,22 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/11 18:20:34 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 14:54:53 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 #include "colours.hpp"
 
-Cure::Cure(void) : AAnimal()
+Cure::Cure(void) : AMateria()
 {
 	ft_colorize(reinterpret_cast<uintptr_t>(this));
 	std::cout << "Default constructor of the Cure class called.";
 	ft_uncolorize();
 	std::cout << std::endl;
-
-	this->_type = "Cure";
-	this->_brain = new Brain();
 }
 
-Cure::Cure(const Cure& copy) : AAnimal(copy)
+Cure::Cure(const Cure& copy) : AMateria(copy)
 {
 	ft_colorize(reinterpret_cast<uintptr_t>(this));
 	std::cout << "Copy constructor of the Cure class called.";

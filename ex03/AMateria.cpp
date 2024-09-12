@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/11 18:10:55 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 14:54:17 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ AMateria::~AMateria(void)
 }
 
 // Getters
-const std::string	AAnimal::getType(void) const
+const std::string &	AMateria::getType(void) const
 {
 	ft_colorize(reinterpret_cast<uintptr_t>(this));
 	std::cout << " [[getting type]] ";

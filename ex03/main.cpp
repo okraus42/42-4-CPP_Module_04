@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 13:55:48 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/11 14:30:40 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 14:38:45 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Character.hpp"
 #include "Cure.hpp"
 #include "Ice.hpp"
-#include "Materia.hpp"
+#include "MateriaSource.hpp"
 #include "colours.hpp"
 
 int main()

@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/11 18:20:41 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 14:54:33 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ Ice::Ice(void) : AMateria()
 	std::cout << "Default constructor of the Ice class called.";
 	ft_uncolorize();
 	std::cout << std::endl;
-
-	this->_type = "Ice";
-	this->_brain = new Brain();
 }
 
 Ice::Ice(const Ice& copy) : AMateria(copy)

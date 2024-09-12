@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/11 14:26:27 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 14:43:43 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 # include <iostream>
+#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

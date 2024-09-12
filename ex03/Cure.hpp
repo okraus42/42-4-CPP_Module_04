@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/11 18:19:24 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 14:46:22 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Cure : public AMateria
 		Cure &operator=(const Cure& src);
 		~Cure(void);
 
+		AMateria* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif

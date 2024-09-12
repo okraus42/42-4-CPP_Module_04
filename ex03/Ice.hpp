@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/11 18:18:39 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 14:46:17 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class Ice : public AMateria
 		Ice &operator=(const Ice& src);
 		~Ice(void);
 
+		AMateria* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif

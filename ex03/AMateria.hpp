@@ -6,14 +6,17 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/11 14:19:24 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 14:42:45 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
+# include "ICharacter.hpp"
 # include <iostream>
+
+class ICharacter;
 
 class AMateria
 {

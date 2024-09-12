@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/11 14:26:37 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 14:49:15 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #ifndef IMATERIASOURCE_HPP
 # define IMATERIASOURCE_HPP
 # include <iostream>
+# include "AMateria.hpp"
 
 class IMateriaSource
 {

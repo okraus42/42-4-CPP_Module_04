@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/11 18:20:47 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 14:56:20 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ Character::Character(void) : ICharacter()
 	std::cout << "Default constructor of the Character class called.";
 	ft_uncolorize();
 	std::cout << std::endl;
-
-	this->_type = "Character";
-	this->_brain = new Brain();
 }
 
 Character::Character(const Character& copy) : ICharacter(copy)
