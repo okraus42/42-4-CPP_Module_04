@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/12 14:42:45 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/12 15:39:12 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class AMateria
 {
 	protected:
 		std::string _type;
+		AMateria*	_nextDrop;
 
 	public:
 		AMateria(std::string const & type);
