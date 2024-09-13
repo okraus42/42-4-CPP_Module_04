@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/13 15:35:07 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/13 18:11:12 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ MateriaSource::~MateriaSource(void)
 	ft_uncolorize();
 	std::cout << std::endl;
 	
-	int			i;
+	int	i;
 
 	i = -1;
 	while (++i < 4)
@@ -67,6 +67,8 @@ MateriaSource::~MateriaSource(void)
 
 void		MateriaSource::learnMateria(AMateria *materia)
 {
+	if (!materia)
+		return ;
 	if (!materia->getIsFresh())
 		return ;
 	if (!this->_inventory[0])
@@ -84,7 +86,7 @@ void		MateriaSource::learnMateria(AMateria *materia)
 
 AMateria*	MateriaSource::createMateria(std::string const & type)
 {
-	int			i;
+	int	i;
 
 	i = -1;
 	while (++i < 4 && this->_inventory[i])
