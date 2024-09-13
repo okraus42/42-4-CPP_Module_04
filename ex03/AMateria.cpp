@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/13 13:50:13 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/13 15:42:40 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ AMateria::AMateria(void)
 	std::cout << std::endl;
 
 	this->_type = "AMateria";
+	this->_fresh = true;
+	this->_nextDrop = NULL;
 }
 
 AMateria::AMateria(const AMateria& copy)
@@ -41,6 +43,8 @@ AMateria	&AMateria::operator = (const AMateria &src)
 	std::cout << std::endl;
 
 	this->_type = src._type;
+	this->_fresh = src._fresh;
+	this->_nextDrop = NULL;
 	return (*this);
 }
 
@@ -50,6 +54,8 @@ AMateria::~AMateria(void)
 	std::cout << "Destructor of the AMateria class called.";
 	ft_uncolorize();
 	std::cout << std::endl;
+	if (this->_nextDrop)
+		delete this->_nextDrop;
 }
 
 AMateria::AMateria(std::string const & type)
@@ -77,4 +83,19 @@ const std::string &	AMateria::getType(void) const
 void AMateria::use(ICharacter& target)
 {
 	std::cout << "* AMateria is being used on " << target.getName() << "*" << std::endl;
+}
+
+void AMateria::addDropped(AMateria *dropped)
+{
+	this->_nextDrop = dropped;
+}
+
+bool	AMateria::getIsFresh(void) const
+{
+	return (this->_fresh);
+}
+
+void	AMateria::unsetFresh(void)
+{
+	this->_fresh = false;
 }

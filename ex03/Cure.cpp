@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/13 13:46:05 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/13 15:41:52 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Cure::Cure(void) : AMateria()
 	ft_uncolorize();
 	std::cout << std::endl;
 	this->_type = "cure";
+	this->_fresh = true;
 	this->_nextDrop = NULL;
 }
 
@@ -42,6 +43,7 @@ Cure	&Cure::operator = (const Cure &src)
 
 	if (this == &src)
 		return (*this);
+	this->_fresh = src._fresh;
 	return (*this);
 }
 

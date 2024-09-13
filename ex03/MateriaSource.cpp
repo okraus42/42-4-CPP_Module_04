@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/13 14:00:27 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/13 15:35:07 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,17 @@ MateriaSource::~MateriaSource(void)
 	int			i;
 
 	i = -1;
-	while (++i < 4 && this->_inventory[i])
+	while (++i < 4)
 	{
-		delete this->_inventory[i];
+		if (this->_inventory[i])
+			delete this->_inventory[i];
 	}
 }
 
 void		MateriaSource::learnMateria(AMateria *materia)
 {
+	if (!materia->getIsFresh())
+		return ;
 	if (!this->_inventory[0])
 		this->_inventory[0] = materia;
 	else if (!this->_inventory[1])
@@ -74,6 +77,9 @@ void		MateriaSource::learnMateria(AMateria *materia)
 		this->_inventory[2] = materia;
 	else if (!this->_inventory[3])
 		this->_inventory[3] = materia;
+	else
+		return ;
+	materia->unsetFresh();
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type)

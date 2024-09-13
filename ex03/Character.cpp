@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/13 14:01:56 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/13 15:39:04 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,20 @@ Character::Character(const Character& copy) : ICharacter(copy)
 	ft_uncolorize();
 	std::cout << std::endl;
 
-	*this = copy;
+	this->_name = copy._name;
+	this->_inventory[0] = NULL;
+	this->_inventory[1] = NULL;
+	this->_inventory[2] = NULL;
+	this->_inventory[3] = NULL;
+	this->_dropped = NULL;
+	if (copy._inventory[0])
+		this->_inventory[0] = copy._inventory[0]->clone();
+	if (copy._inventory[1])
+		this->_inventory[1] = copy._inventory[1]->clone();
+	if (copy._inventory[2])
+		this->_inventory[2] = copy._inventory[2]->clone();
+	if (copy._inventory[3])
+		this->_inventory[3] = copy._inventory[3]->clone();
 }
 
 Character	&Character::operator = (const Character &src)
@@ -47,6 +60,32 @@ Character	&Character::operator = (const Character &src)
 
 	if (this == &src)
 		return (*this);
+	this->_name = src._name;
+	if (this->_dropped)
+	{
+		delete this->_dropped;
+	}
+	if (this->_inventory[0])
+		delete this->_inventory[0];
+	if (this->_inventory[1])
+		delete this->_inventory[1];
+	if (this->_inventory[2])
+		delete this->_inventory[2];
+	if (this->_inventory[3])
+		delete this->_inventory[3];
+	this->_inventory[0] = NULL;
+	this->_inventory[1] = NULL;
+	this->_inventory[2] = NULL;
+	this->_inventory[3] = NULL;
+	this->_dropped = NULL;
+	if (src._inventory[0])
+		this->_inventory[0] = src._inventory[0]->clone();
+	if (src._inventory[1])
+		this->_inventory[1] = src._inventory[1]->clone();
+	if (src._inventory[2])
+		this->_inventory[2] = src._inventory[2]->clone();
+	if (src._inventory[3])
+		this->_inventory[3] = src._inventory[3]->clone();
 	return (*this);
 }
 
@@ -60,9 +99,15 @@ Character::~Character(void)
 	int			i;
 
 	i = -1;
-	while (++i < 4 && this->_inventory[i])
+	while (++i < 4)
 	{
-		delete this->_inventory[i];
+		if (this->_inventory[i])
+			delete this->_inventory[i];
+	}
+	if (this->_dropped)
+	{
+		// std::cout << reinterpret_cast<uintptr_t>(this->_dropped) << "deleted drop" << std::endl;
+		delete this->_dropped;
 	}
 }
 
@@ -88,6 +133,8 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+	if (!m->getIsFresh())
+		return ;
 	if (!this->_inventory[0])
 		this->_inventory[0] = m;
 	else if (!this->_inventory[1])
@@ -96,6 +143,9 @@ void Character::equip(AMateria* m)
 		this->_inventory[2] = m;
 	else if (!this->_inventory[3])
 		this->_inventory[3] = m;
+	else
+		return ;
+	m->unsetFresh();
 }
 
 void Character::unequip(int idx)
@@ -104,8 +154,8 @@ void Character::unequip(int idx)
 		return ;
 	if (this->_inventory[idx])
 	{
-		// if (this->_dropped)
-		// 	this->_inventory[idx].addDropped(this->_dropped);
+		if (this->_dropped)
+			this->_inventory[idx]->addDropped(this->_dropped);
 		this->_dropped = this->_inventory[idx];
 		this->_inventory[idx] = NULL;
 	}
@@ -113,6 +163,8 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
+	if (idx < 0 || idx > 3)
+		return ;
 	if (this->_inventory[idx])
 		this->_inventory[idx]->use(target);
 }
