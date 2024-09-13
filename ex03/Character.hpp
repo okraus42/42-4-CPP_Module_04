@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/12 15:40:28 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/13 13:47:53 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Character : public ICharacter
 {
 	private:
-		std::string	*_name;
+		std::string	_name;
 		AMateria	*_inventory[4];
 		AMateria	*_dropped;
 

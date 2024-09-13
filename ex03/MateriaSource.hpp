@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/12 14:48:41 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/13 13:58:56 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ class MateriaSource : public IMateriaSource
 		AMateria*	createMateria(std::string const & type);
 
 	private:
-		AMateria	*_learnInventory[4];
+		AMateria	*_inventory[4];
 };
 #endif

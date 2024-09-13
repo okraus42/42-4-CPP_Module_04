@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/12 17:40:05 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/13 13:46:05 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ Cure::Cure(void) : AMateria()
 	std::cout << "Default constructor of the Cure class called.";
 	ft_uncolorize();
 	std::cout << std::endl;
+	this->_type = "cure";
+	this->_nextDrop = NULL;
 }
 
 Cure::Cure(const Cure& copy) : AMateria(copy)

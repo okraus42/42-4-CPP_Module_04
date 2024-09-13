@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 15:30:55 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/12 17:39:54 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/13 13:45:53 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ Ice::Ice(void) : AMateria()
 	std::cout << "Default constructor of the Ice class called.";
 	ft_uncolorize();
 	std::cout << std::endl;
+	this->_type = "ice";
+	this->_nextDrop = NULL;
 }
 
 Ice::Ice(const Ice& copy) : AMateria(copy)

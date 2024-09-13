@@ -6,7 +6,7 @@
 /*   By: okraus <okraus@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 13:08:58 by okraus            #+#    #+#             */
-/*   Updated: 2024/09/12 15:39:12 by okraus           ###   ########.fr       */
+/*   Updated: 2024/09/13 13:30:19 by okraus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ class AMateria
 		virtual ~AMateria(void); //this virtual is somehow important
 		std::string const & getType() const; //Returns the materia type
 		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		virtual void use(ICharacter& target);  //why?
 };
 #endif
